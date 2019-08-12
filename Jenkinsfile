@@ -13,7 +13,7 @@ node('EmrDevBuildWin') {
     stage('Test Git Push'){
         bat ''' git tag Test_Tag
                 git add .
-                git commit
+                git commit -m "Test"
                 git push
             '''
         
