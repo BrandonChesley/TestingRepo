@@ -11,7 +11,10 @@ node('EmrDevBuildWin') {
             '''
     }
     stage('Test Git Push'){
-        bat ''' git tag Test_Tag
+        bat ''' 
+                git config --global user.email "jenkins@emrdevbuildwin.QuadrantHR.com"
+                git config --global user.name "Jenkins Release (${BUILD_NUMBER})"
+                git tag Test_Tag
                 git add .
                 git commit -m "Test"
                 git push origin HEAD:develop --tags
