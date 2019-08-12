@@ -14,7 +14,7 @@ node('EmrDevBuildWin') {
         bat ''' git tag Test_Tag
                 git add .
                 git commit -m "Test"
-                git push origin HEAD:develop
+                git push origin HEAD:develop --tags
             '''
         
     }
