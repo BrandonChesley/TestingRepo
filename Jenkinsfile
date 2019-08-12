@@ -7,8 +7,8 @@ node('EmrDevBuildWin') {
             '''
     }
     stage('Test Git Push'){
-		git url: "ssh://jenkins@your-git-repo:12345/your-git-project.git",
-    			credentialsId: 'jenkins_ssh_key',
+		git url: "ssh://git@github.com:BrandonChesley/TestingRepo.git",
+    			credentialsId: '01b4666e-9b05-47c2-b0e5-407c308c7e1e',
     			branch: 'develop'
 		bat
 	    		'''
