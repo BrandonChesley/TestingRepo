@@ -11,11 +11,15 @@ node('EmrDevBuildWin') {
             '''
     }
     stage('Test Git Push'){
+		withCredentials([sshUserPrivateKey(credentialsId: '01b4666e-9b05-47c2-b0e5-407c308c7e1e', keyFileVariable: 'keyFile', passphraseVariable: '', usernameVariable: 'userVar')]) {
+   
+
 		bat	'''
 			git tag Test_Tag
 			git add .
 			git commit -m "Test"
 			git push origin HEAD:develop
 			'''
+		}
     }
 }
