@@ -7,7 +7,7 @@ node('EmrDevBuildWin') {
             '''
     }
     stage('Test Git Push'){
-		git url: "ssh:\\BrandonChesley@git@github.com:BrandonChesley\TestingRepo.git",
+		git url: "ssh://BrandonChesley@https://github.com/BrandonChesley/TestingRepo.git",
     			credentialsId: '01b4666e-9b05-47c2-b0e5-407c308c7e1e',
     			branch: 'develop'
 		bat
